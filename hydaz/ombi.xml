@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<Container version="2">
+     <Name>ombi</Name>
+     <Beta>False</Beta>
+     <Repository>vcxpz/ombi</Repository>
+     <Registry>https://hub.docker.com/r/vcxpz/ombi/</Registry>
+     <Network>bridge</Network>
+     <Privileged>false</Privileged>
+     <Project>https://ombi.io/</Project>
+     <Support>https://github.com/hydazz/docker-ombi/issues/new/</Support>
+     <Category>Downloaders: Network:Other MediaApp:Video Tools:</Category>
+     <WebUI>http://[IP]:[PORT:3579]</WebUI>
+     <TemplateURL>https://raw.githubusercontent.com/hydazz/docker-templates/main/hydaz/ombi.xml</TemplateURL>
+     <Icon>https://raw.githubusercontent.com/hydazz/docker-templates/main/hydaz/png/ombi.png</Icon>
+     <Overview>[p][span style="color: #777;"]Ombi allows you to host your own Plex Request and user management system.[/span][/p]</Overview>
+     <Config Name="WebUI Port" Target="3579" Default="3579" Mode="tcp" Description="Container Port: 3579" Type="Port" Display="always" Required="true" Mask="false"/>
+     <Config Name="Debug" Target="DEBUG" Default="true|false" Mode="" Description="Choose wether to display all app logs in the docker logs" Type="Variable" Display="always" Required="false" Mask="false"/>
+     <Config Name="Appdata Path" Target="/config" Default="" Mode="rw" Description="Container Path: /config" Type="Path" Display="advanced-hide" Required="true" Mask="false"/>
+     <Config Name="PUID" Target="PUID" Default="99" Mode="" Description="UID for permissions. Do not change unless you know what you're doing." Type="Variable" Display="advanced-hide" Required="false" Mask="false"/>
+     <Config Name="PGID" Target="PGID" Default="100" Mode="" Description="GID for permissions. Do not change unless you know what you're doing." Type="Variable" Display="advanced-hide" Required="false" Mask="false"/>
+     <Config Name="UMASK" Target="UMASK" Default="022" Mode="" Description="Permissions new folders/files will be created with." Type="Variable" Display="advanced-hide" Required="false" Mask="false"/>
+</Container>

@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<Container version="2">
+     <Name>akaunting</Name>
+     <Beta>False</Beta>
+     <Repository>vcxpz/akaunting</Repository>
+     <Registry>https://hub.docker.com/r/vcxpz/akaunting/</Registry>
+     <Network>bridge</Network>
+     <Privileged>false</Privileged>
+     <Project>https://akaunting.com/</Project>
+     <Support>https://github.com/hydazz/docker-akaunting/issues/new/</Support>
+     <Category>Productivity: Tools: Network:Web Status:Stable</Category>
+     <WebUI>http://[IP]:[PORT:80]</WebUI>
+     <TemplateURL>https://raw.githubusercontent.com/hydazz/docker-templates/main/hydaz/akaunting.xml</TemplateURL>
+     <Icon>https://raw.githubusercontent.com/hydazz/docker-templates/main/hydaz/png/akaunting.png</Icon>
+     <Overview>[p][span style="color: #777;"]Akaunting is a free, open-source and online accounting software designed for small businesses and freelancers. It is built with modern technologies such as Laravel, VueJS, Bootstrap 4, RESTful API etc. Thanks
+          to its modular structure, Akaunting provides an awesome App Store for users and developers.[/span][/p]</Overview>
+     <Config Name="HTTP" Target="80" Default="80" Mode="tcp" Description="Container Port: 80" Type="Port" Display="always" Required="true" Mask="false"/>
+     <Config Name="HTTPS" Target="443" Default="443" Mode="tcp" Description="Container Port: 443" Type="Port" Display="always" Required="true" Mask="false"/>
+     <Config Name="Appdata Path" Target="/config" Default="" Mode="rw" Description="Container Path: /config" Type="Path" Display="advanced-hide" Required="true" Mask="false"/>
+     <Config Name="PUID" Target="PUID" Default="99" Mode="" Description="UID for permissions. Do not change unless you know what you're doing." Type="Variable" Display="advanced-hide" Required="false" Mask="false"/>
+     <Config Name="PGID" Target="PGID" Default="100" Mode="" Description="GID for permissions. Do not change unless you know what you're doing." Type="Variable" Display="advanced-hide" Required="false" Mask="false"/>
+</Container>

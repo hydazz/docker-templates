@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<Container version="2">
+     <Name>plex</Name>
+     <Beta>False</Beta>
+     <Repository>vcxpz/plex</Repository>
+     <Registry>https://hub.docker.com/r/vcxpz/plex/</Registry>
+     <Network>bridge</Network>
+     <Privileged>false</Privileged>
+     <Project>https://www.plex.tv/</Project>
+     <Support>https://github.com/hydazz/docker-plex/issues/new/</Support>
+     <Category>MediaServer:Video MediaServer:Music MediaServer:Photos Status:Stable</Category>
+     <WebUI>http://[IP]:[PORT:32400]/web</WebUI>
+     <TemplateURL>https://raw.githubusercontent.com/hydazz/docker-templates/main/hydaz/plex.xml</TemplateURL>
+     <Icon>https://raw.githubusercontent.com/hydazz/docker-templates/main/hydaz/png/plex.png</Icon>
+     <Overview>[p][span style="color: #777;"]Plex organizes video, music and photos from personal media libraries and streams them to smart TVs, streaming boxes and mobile devices.[/span][/p][p]&nbsp;[/p][p][b][span style="color: #777;"]Nvidia GPU
+          Use[/span][/b][/p][p][span style="color: #777;"]Using the Unraid Nvidia Plugin to install a version of Unraid with the Nvidia Drivers installed and add [b]--runtime=nvidia[/b] to [b]Extra Parameters[/b] (switch on advanced
+          view) and copy your [b]GPU UUID[/b] to [b]NVIDIA_VISIBLE_DEVICES[/b].[/span][/p][p]&nbsp;[/p][p][b][span style="color: #777;"]Intel GPU Use[/span][/b][/p][p][span style="color: #777;"]Edit your [b]go[/b] file
+          to include: [b]modprobe i915[/b], save and reboot, then add [b]--device=/dev/dri[/b] to [b]Extra Parameters[/b] (switch on advanced view)[/span][/p]</Overview>
+     <Config Name="WebUI Port" Target="32400" Default="32400" Mode="tcp" Description="For access to the Plex Media Server WebUI (No effect in host mode - reference only)" Type="Port" Display="always" Required="false" Mask="false"/>
+     <Config Name="Plex Version" Target="VERSION" Default="latest|public" Mode="" Description="See https://github.com/linuxserver/docker-plex/#application-setup" Type="Variable" Display="always" Required="true" Mask="false"/>
+     <Config Name="Transcode Folder Path" Target="/transcode" Default="" Mode="rw" Description="Container Path: /transcode" Type="Path" Display="always" Required="true" Mask="false"/>
+     <Config Name="Media Folder Path" Target="/media" Default="/mnt/user/Plex Media/" Mode="rw" Description="Path to your Plex media" Type="Path" Display="always" Required="false" Mask="false"/>
+     <Config Name="Plex Claim Token" Target="PLEX_CLAIM" Default="" Mode="" Description="Obtain a token from here: https://www.plex.tv/claim/" Type="Variable" Display="always" Required="false" Mask="false"/>
+     <Config Name="Nvidia Visible Devices" Target="NVIDIA_VISIBLE_DEVICES" Default="all" Mode="" Description="Nvidia Visible Devices (Optional - Requires Nvidia GPU and Unraid Nvidia build)" Type="Variable" Display="always" Required="false" Mask="false"/>
+     <Config Name="Debug" Target="DEBUG" Default="true|false" Mode="" Description="Choose wether to display all app logs in the docker logs" Type="Variable" Display="always" Required="false" Mask="false"/>
+     <Config Name="Appdata Path" Target="/config" Default="" Mode="rw" Description="Container Path: /config" Type="Path" Display="advanced-hide" Required="true" Mask="false"/>
+     <Config Name="Plex Companion" Target="8324" Default="3005" Mode="tcp" Description="For controlling Plex Home Theater via Plex Companion (No effect in host mode - reference only)" Type="Port" Display="advanced" Required="false" Mask="false"/>
+     <Config Name="Roku via Plex Companion" Target="32469" Default="8324" Mode="tcp" Description="For controlling Plex for Roku via Plex Companion (No effect in host mode - reference only)" Type="Port" Display="advanced" Required="false" Mask="false"/>
+     <Config Name="Plex DLNA Server" Target="1900" Default="32469" Mode="tcp" Description="For access to the Plex DLNA Server (No effect in host mode - reference only)" Type="Port" Display="advanced" Required="false" Mask="false"/>
+     <Config Name="Plex DLNA Server" Target="32410" Default="1900" Mode="udp" Description="For access to the Plex DLNA Server (No effect in host mode - reference only)" Type="Port" Display="advanced" Required="false" Mask="false"/>
+     <Config Name="GDM network discovery" Target="32412" Default="32410" Mode="udp" Description="For current GDM network discovery (No effect in host mode - reference only)" Type="Port" Display="advanced" Required="false" Mask="false"/>
+     <Config Name="GDM network discovery" Target="32413" Default="32412" Mode="udp" Description="For current GDM network discovery (No effect in host mode - reference only)" Type="Port" Display="advanced" Required="false" Mask="false"/>
+     <Config Name="GDM network discovery" Target="32414" Default="32413" Mode="udp" Description="For current GDM network discovery (No effect in host mode - reference only)" Type="Port" Display="advanced" Required="false" Mask="false"/>
+     <Config Name="GDM network discovery" Target="100" Default="32414" Mode="udp" Description="For current GDM network discovery (No effect in host mode - reference only)" Type="Port" Display="advanced" Required="false" Mask="false"/>
+     <Config Name="PGID" Target="PGID" Default="100" Mode="" Description="GID for permissions. Do not change unless you know what you're doing." Type="Variable" Display="advanced-hide" Required="false" Mask="false"/>
+     <Config Name="PUID" Target="PUID" Default="99" Mode="" Description="UID for permissions. Do not change unless you know what you're doing." Type="Variable" Display="advanced-hide" Required="false" Mask="false"/>
+</Container>

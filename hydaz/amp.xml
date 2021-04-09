@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<Container version="2">
+     <Name>amp</Name>
+     <Beta>False</Beta>
+     <Repository>vcxpz/amp</Repository>
+     <Registry>https://hub.docker.com/r/vcxpz/amp/</Registry>
+     <Network>bridge</Network>
+     <Privileged>false</Privileged>
+     <Project>https://cubecoders.com/AMP/</Project>
+     <Support>https://github.com/hydazz/docker-amp/issues/new/</Support>
+     <Category>GameServers:</Category>
+     <WebUI>http://[IP]:[PORT:8080]/</WebUI>
+     <TemplateURL>https://raw.githubusercontent.com/hydazz/docker-templates/main/hydaz/amp.xml</TemplateURL>
+     <Icon>https://raw.githubusercontent.com/hydazz/docker-templates/main/hydaz/png/amp.png</Icon>
+     <ExtraParams>--mac-address=xx:xx:xx:xx:xx:xx</ExtraParams>
+     <Overview>[p][span style="color: #777;"]AMP is short for Application Management Panel. It's CubeCoders next-generation server administration software built for both users and service providers. It supports both Windows and Linux based servers and
+          allows you to manage all your game servers from a single web interface.[/span][/p][p][b][span style="color: #777;"]Make sure you set a MAC address in the extra parameters (switch to advanced view)[/span][/b][/p][p][span style="color:
+          #777;"]To make your game accessible outside of this container make sure you add all the ports required.[/span][/p][p][span style="color: #777;"]See [span style="color: #008080;"][a style="color: #008080;"
+          href="https://github.com/hydazz/docker-amp/#ports"]https://github.com/hydazz/docker-amp/#ports[/a][/span][/span][span style="color: #777;"]&nbsp;for a list of ports each game uses[/span][/p]</Overview>
+     <Config Name="WebUI Port" Target="8080" Default="8080" Mode="tcp" Description="Container Port: 8080" Type="Port" Display="always" Required="true" Mask="false"/>
+     <Config Name="AMP License" Target="LICENCE" Default="" Mode="" Description="Your AMP or McMyAdmin license." Type="Variable" Display="always" Required="true" Mask="false"/>
+     <Config
+          Name="Main Module"
+          Target="MODULE"
+          Default="ADS|Generic|McMyAdmin|Minecraft"
+          Mode=""
+          Description="Which Module to use for the main instance. Setting this to ADS allows you to create multiple modules. See https://github.com/hydazz/docker-amp/#module for help"
+          Type="Variable"
+          Display="always"
+          Required="true"
+          Mask="false"/>
+     <Config Name="WebUI Username" Target="USERNAME" Default="" Mode="" Description="The username of the admin user created on first boot." Type="Variable" Display="always" Required="true" Mask="false"/>
+     <Config Name="WebIU Password" Target="PASSWORD" Default="" Mode="" Description="The password of the user above. This value is only used when creating the new user." Type="Variable" Display="always" Required="true" Mask="true"/>
+     <Config Name="Appdata Path" Target="/config" Default="" Mode="rw" Description="Container Path: /config" Type="Path" Display="advanced-hide" Required="true" Mask="false"/>
+     <Config Name="PUID" Target="PUID" Default="99" Mode="" Description="UID for permissions. Do not change unless you know what you're doing." Type="Variable" Display="advanced-hide" Required="false" Mask="false"/>
+     <Config Name="PGID" Target="PGID" Default="100" Mode="" Description="GID for permissions. Do not change unless you know what you're doing." Type="Variable" Display="advanced-hide" Required="false" Mask="false"/>
+</Container>
