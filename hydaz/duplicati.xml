@@ -20,7 +20,7 @@
      <Config Name="Temporary Files Path" Target="/tmp" Default="" Mode="rw" Description="Container Path: /tmp" Type="Path" Display="always" Required="true" Mask="false"/>
      <Config Name="Backup Destination Path" Target="/backups" Default="" Mode="rw" Description="Container Path: /backups" Type="Path" Display="always" Required="false" Mask="false"/>
      <Config Name="Backup Source Path" Target="/source" Default="" Mode="rw" Description="Container Path: /source" Type="Path" Display="always" Required="true" Mask="false"/>
-     <Config Name="Privileged" Target="PRIVILEGED" Default="true|false" Mode="" Description="Set this to true to run Duplicati as root" Type="Variable" Display="always" Required="false" Mask="false"/>
+     <Config Name="Privileged" Target="PRIVILEGED" Default="false|true" Mode="" Description="Set this to true to run Duplicati as root" Type="Variable" Display="always" Required="false" Mask="false"/>
      <Config Name="Appdata Path" Target="/config" Default="" Mode="rw" Description="Container Path: /config" Type="Path" Display="advanced-hide" Required="true" Mask="false"/>
      <Config Name="PUID" Target="PUID" Default="99" Mode="" Description="UID for permissions. Do not change unless you know what you're doing." Type="Variable" Display="advanced-hide" Required="false" Mask="false"/>
      <Config Name="PGID" Target="PGID" Default="100" Mode="" Description="GID for permissions. Do not change unless you know what you're doing." Type="Variable" Display="advanced-hide" Required="false" Mask="false"/>
