@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<Container version="2">
+     <Name>esphome</Name>
+     <Beta>False</Beta>
+     <Repository>vcxpz/esphome</Repository>
+     <Registry>https://hub.docker.com/r/vcxpz/esphome/</Registry>
+     <Network>host</Network>
+     <Privileged>false</Privileged>
+     <Project>https://esphome.io/</Project>
+     <Support>https://github.com/hydazz/docker-esphome/issues/new/</Support>
+     <Category>Network:Management Status:Stable</Category>
+     <WebUI>http://[IP]:[PORT:6052]/</WebUI>
+     <TemplateURL>https://raw.githubusercontent.com/hydazz/docker-templates/main/hydaz/esphome.xml</TemplateURL>
+     <Icon>https://raw.githubusercontent.com/hydazz/docker-templates/main/hydaz/png/esphome.png</Icon>
+     <Overview>[p][span style="color: #777;"]ESPHome is a system to control your ESP8266/ESP32 by simple yet powerful configuration files and control them remotely through Home Automation systems.[br][b]Network Type be set to host for ESPHome to resolve IP addresses of clients[/br][/span][/p]</Overview>
+     <Config Name="ESPHome Port" Target="6052" Default="6052" Mode="tcp" Description="Container Port: 6052" Type="Port" Display="always-hide" Required="true" Mask="false"/>
+     <Config Name="Appdata Path" Target="/config" Default="" Mode="rw" Description="Container Path: /config" Type="Path" Display="advanced-hide" Required="true" Mask="false"/>
+     <Config Name="Debug" Target="DEBUG" Default="true|false" Mode="" Description="Choose wether to display all app logs in the docker logs" Type="Variable" Display="always" Required="false" Mask="false"/>
+     <Config Name="PUID" Target="PUID" Default="99" Mode="" Description="UID for permissions. Do not change unless you know what you're doing." Type="Variable" Display="advanced-hide" Required="false" Mask="false"/>
+     <Config Name="PGID" Target="PGID" Default="100" Mode="" Description="GID for permissions. Do not change unless you know what you're doing." Type="Variable" Display="advanced-hide" Required="false" Mask="false"/>
+</Container>
