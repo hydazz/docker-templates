@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<Container version="2">
+     <Name>poste</Name>
+     <Beta>False</Beta>
+     <Repository>analogic/poste.io</Repository>
+     <Registry>https://hub.docker.com/r/analogic/poste.io/</Registry>
+     <Network>bridge</Network>
+     <Privileged>false</Privileged>
+     <Project>https://poste.io/</Project>
+     <Support>https://lime-technology.com/forums/topic/69507-support-posteio-free-version/</Support>
+     <Category>Cloud: Productivity: Tools:Utilities Network:Web Network:Other Network:Messenger</Category>
+     <WebUI>https://[IP]:[PORT:443]/</WebUI>
+     <TemplateURL>https://raw.githubusercontent.com/hydazz/docker-templates/main/hydaz/poste.xml</TemplateURL>
+     <Icon>https://raw.githubusercontent.com/hydazz/docker-templates/main/hydaz/png/poste.png</Icon>
+     <ExtraParams></ExtraParams>
+     <Overview>[p][span style="color: #777;"]FREE version of Poste.io, full mail server solution. POP3, SMTP, IMAP, Spamassassin, WebMail, WebAdmin. [br/] INITIAL SETUP:[br/][br/] 0. Requires registered FQDN to send/receive external email.[br/] 1.
+          Following ports are used by container for mail: 25, 110, 143, 443, 465, 587, 993, 995[br/] 2. Following ports are used by container for webui: 443, 8280 (These may conflict, check your ports)[br/] 3. Make a user share for mail data, default is
+          /mnt/user/poste[br/] 4. Some or all mail ports may need to be opened, forwarded, or dmz for mail send/receive to work.[br/] Optional arguments[br/] -e "HTTPS=OFF" To disable all redirects to encrypted HTTP, its useful when you are using some kind of
+          reverse proxy (place this argument before image name!)[br/][br/] NOTE: Marked as BETA, simply because author is not an expert in email exchange servers -- software itself looks pretty good.[/span][/p]</Overview>
+     <Config Name="WebUI Port" Target="443" Default="443" Mode="tcp" Description="Container Port: 443" Type="Port" Display="always" Required="true" Mask="false"/>
+     <Config Name="POP3 Unencrypted (receiving mail) Port" Target="110" Default="110" Mode="tcp" Description="Container Port: 110" Type="Port" Display="always" Required="false" Mask="false"/>
+     <Config Name="IMAP Unencrypted (receiving mail) Port" Target="143" Default="143" Mode="tcp" Description="Container Port: 143" Type="Port" Display="always" Required="true" Mask="false"/>
+     <Config Name="SMTP Unencrypted (sending mail) Port" Target="25" Default="25" Mode="tcp" Description="Container Port: 25" Type="Port" Display="always" Required="true" Mask="false"/>
+     <Config Name="ManageSieve Port Port" Target="4190" Default="4190" Mode="tcp" Description="Container Port: 4190" Type="Port" Display="always" Required="true" Mask="false"/>
+     <Config Name="SMTP Encrypted (sending mail) Port" Target="465" Default="465" Mode="tcp" Description="Container Port: 465" Type="Port" Display="always" Required="true" Mask="false"/>
+     <Config Name="SMTP MSA Encrypted (sending mail) Port" Target="587" Default="587" Mode="tcp" Description="Container Port: 587" Type="Port" Display="always" Required="true" Mask="false"/>
+     <Config Name="IMAP Encrypted (receiving mail) Port" Target="993" Default="993" Mode="tcp" Description="Container Port: 993" Type="Port" Display="always" Required="true" Mask="false"/>
+     <Config Name="POP3 Encrypted (receiving mail) Port" Target="995" Default="995" Mode="tcp" Description="Container Port: 995" Type="Port" Display="always" Required="false" Mask="false"/>
+     <Config
+          Name="External Sieve Filter Manager"
+          Target="4190"
+          Default="4190"
+          Mode="tcp"
+          Description="When you are going to use clients with ability to manage Sieve filters externally, you need also publish port 4190"
+          Type="Port"
+          Display="always"
+          Required="false"
+          Mask="false"/>
+     <Config Name="Appdata Path" Target="/data" Default="" Mode="rw" Description="Container Path: /data" Type="Path" Display="advanced-hide" Required="true" Mask="false"/>
+     <Config Name="PUID" Target="PUID" Default="99" Mode="" Description="UID for permissions. Do not change unless you know what you're doing." Type="Variable" Display="advanced-hide" Required="false" Mask="false"/>
+     <Config Name="PGID" Target="PGID" Default="100" Mode="" Description="GID for permissions. Do not change unless you know what you're doing." Type="Variable" Display="advanced-hide" Required="false" Mask="false"/>
+</Container>
