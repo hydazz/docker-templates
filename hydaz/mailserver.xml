@@ -20,19 +20,19 @@
           href="https://raw.githubusercontent.com/docker-mailserver/docker-mailserver/master/setup.sh"]https://raw.githubusercontent.com/docker-mailserver/docker-mailserver/master/setup.sh[/a][/b][/span][/p][p][span style="color: #777;"]to download
           required files. Run[/span][/p][p][span style="color: #777;"][b]chmod a+x ./setup.sh[/b][/span][/p][p][span style="color: #777;"]To make the script executable and follow the GitHub instructions for setting up. Make sure to check the
           mailserver.env path in Extra Parameters. [b]--cap-add=NET_ADMIN [/b]must be added to Extra Parameters if you plan to use fail2ban.[/span][/p]</Overview>
+     <Config Name="SMTP Unencrypted (sending mail) Port" Target="25" Default="25" Mode="tcp" Description="Container Port: 25" Type="Port" Display="always" Required="true" Mask="false"/>
      <Config Name="POP3 Unencrypted (receiving mail) Port" Target="110" Default="110" Mode="tcp" Description="Container Port: 110" Type="Port" Display="always" Required="false" Mask="false"/>
      <Config Name="IMAP Unencrypted (receiving mail) Port" Target="143" Default="143" Mode="tcp" Description="Container Port: 143" Type="Port" Display="always" Required="true" Mask="false"/>
-     <Config Name="SMTP Unencrypted (sending mail) Port" Target="25" Default="25" Mode="tcp" Description="Container Port: 25" Type="Port" Display="always" Required="true" Mask="false"/>
-     <Config Name="ManageSieve Port Port" Target="4190" Default="4190" Mode="tcp" Description="Container Port: 4190" Type="Port" Display="always" Required="true" Mask="false"/>
      <Config Name="SMTP Encrypted (sending mail) Port" Target="465" Default="465" Mode="tcp" Description="Container Port: 465" Type="Port" Display="always" Required="true" Mask="false"/>
      <Config Name="SMTP MSA Encrypted (sending mail) Port" Target="587" Default="587" Mode="tcp" Description="Container Port: 587" Type="Port" Display="always" Required="true" Mask="false"/>
      <Config Name="IMAP Encrypted (receiving mail) Port" Target="993" Default="993" Mode="tcp" Description="Container Port: 993" Type="Port" Display="always" Required="true" Mask="false"/>
      <Config Name="POP3 Encrypted (receiving mail) Port" Target="995" Default="995" Mode="tcp" Description="Container Port: 995" Type="Port" Display="always" Required="false" Mask="false"/>
+     <Config Name="ManageSieve Port Port" Target="4190" Default="4190" Mode="tcp" Description="Container Port: 4190" Type="Port" Display="always" Required="true" Mask="false"/>
      <Config Name="Mail Path" Target="/var/mail" Default="/mnt/user/appdata/mailserver/data/mail" Mode="rw" Description="Container Path: /var/mail" Type="Path" Display="always" Required="true" Mask="false"/>
      <Config Name="Log Path" Target="/var/log/mail" Default="/mnt/user/appdata/mailserver/data/logs" Mode="rw" Description="Container Path: /var/log/mail" Type="Path" Display="always" Required="false" Mask="false"/>
      <Config Name="Mail State Path" Target="/var/mail-state" Default="/mnt/user/appdata/mailserver/data/mail-state" Mode="rw" Description="Container Path: /var/mail-state" Type="Path" Display="always" Required="true" Mask="false"/>
      <Config Name="Appdata Path" Target="/tmp/docker-mailserver" Default="/mnt/user/appdata/mailserver/config" Mode="rw" Description="Container Path: /tmp/docker-mailserver" Type="Path" Display="always" Required="true" Mask="false"/>
-     <Config Name="Path to Letsencrypt" Target="/etc/letsencrypt" Default="/mnt/user/appdata/swag/etc/letsencrypt/" Mode="ro" Description="Container Path: /etc/letsencrypt" Type="Path" Display="always" Required="false" Mask="false"/>
+     <Config Name="Path to Swag Certificates" Target="/etc/letsencrypt" Default="/mnt/user/appdata/swag/etc/letsencrypt/" Mode="ro" Description="Container Path: /etc/letsencrypt" Type="Path" Display="always" Required="false" Mask="false"/>
      <Config Name="localtime Path" Target="/etc/localtime" Default="/etc/localtime" Mode="rw" Description="Container Path: /etc/localtime" Type="Path" Display="advanced-hide" Required="true" Mask="false"/>
      <Config Name="PUID" Target="PUID" Default="99" Mode="" Description="UID for permissions. Do not change unless you know what you're doing." Type="Variable" Display="advanced-hide" Required="false" Mask="false"/>
      <Config Name="PGID" Target="PGID" Default="100" Mode="" Description="GID for permissions. Do not change unless you know what you're doing." Type="Variable" Display="advanced-hide" Required="false" Mask="false"/>
