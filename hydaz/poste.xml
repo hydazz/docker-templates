@@ -22,7 +22,6 @@
      <Config Name="POP3 Unencrypted (receiving mail) Port" Target="110" Default="110" Mode="tcp" Description="Container Port: 110" Type="Port" Display="always" Required="false" Mask="false"/>
      <Config Name="IMAP Unencrypted (receiving mail) Port" Target="143" Default="143" Mode="tcp" Description="Container Port: 143" Type="Port" Display="always" Required="true" Mask="false"/>
      <Config Name="SMTP Unencrypted (sending mail) Port" Target="25" Default="25" Mode="tcp" Description="Container Port: 25" Type="Port" Display="always" Required="true" Mask="false"/>
-     <Config Name="ManageSieve Port Port" Target="4190" Default="4190" Mode="tcp" Description="Container Port: 4190" Type="Port" Display="always" Required="true" Mask="false"/>
      <Config Name="SMTP Encrypted (sending mail) Port" Target="465" Default="465" Mode="tcp" Description="Container Port: 465" Type="Port" Display="always" Required="true" Mask="false"/>
      <Config Name="SMTP MSA Encrypted (sending mail) Port" Target="587" Default="587" Mode="tcp" Description="Container Port: 587" Type="Port" Display="always" Required="true" Mask="false"/>
      <Config Name="IMAP Encrypted (receiving mail) Port" Target="993" Default="993" Mode="tcp" Description="Container Port: 993" Type="Port" Display="always" Required="true" Mask="false"/>
