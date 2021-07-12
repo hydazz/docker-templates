@@ -15,8 +15,7 @@
      <ExtraParams>--cap-add=NET_ADMIN</ExtraParams>
      <Overview>[p][span style="color: #777;"]qBittorrent is a bittorrent client programmed in C++ / Qt that uses libtorrent (sometimes called libtorrent-rasterbar) by Arvid Norberg. It aims to be a good alternative to all other bittorrent clients out
           there. qBittorrent is fast, stable and provides unicode support as well as many features.[/span][/p]</Overview>
-     <Config Name="WebUI Port" Target="8080" Default="8080" Mode="tcp" Description="Container Port: 8080" Type="Port" Display="always" Required="false" Mask="false"/>
-     <Config Name="Custom WebUI Port" Target="QBT_WEBUI_PORT" Default="8080" Mode="" Description="If you do not want to use port 8080 change this field then add a new port" Type="Variable" Display="always" Required="false" Mask="false"/>
+     <Config Name="Custom WebUI Port" Target="QBT_WEBUI_PORT" Default="8080" Mode="" Description="Change this field to the webUI port then add a new port to match" Type="Variable" Display="always" Required="false" Mask="false"/>
      <Config Name="DNS Server" Target="DNS" Default="1.1.1.1" Mode="" Description="Container Variable: DNS" Type="Variable" Display="always" Required="false" Mask="false"/>
      <Config Name="OpenVPN Username" Target="OPENVPN_USERNAME" Default="" Mode="" Description="Container Variable: OPENVPN_USERNAME" Type="Variable" Display="always" Required="true" Mask="false"/>
      <Config Name="OpenVPN Password" Target="OPENVPN_PASSWORD" Default="" Mode="" Description="Container Variable: OPENVPN_PASSWORD" Type="Variable" Display="always" Required="true" Mask="true"/>
